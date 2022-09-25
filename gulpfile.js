@@ -9,7 +9,7 @@ let gulp = require('gulp'),
   cssmin = require('gulp-cssmin');
 
 gulp.task('clean', async function () {
-  del.sync('build')
+  del.sync('build');
 });
 
 gulp.task('sass', function () {
@@ -17,7 +17,7 @@ gulp.task('sass', function () {
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(rename ({ suffix: '.min' }))
     .pipe(autoprefixer({
-      overrideBrowserslist: ['last 8 versions']
+      overrideBrowserslist: ['last 8 versions'],
     }))
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({ stream: true }))
@@ -36,7 +36,7 @@ gulp.task('style', function () {
     .pipe(gulp.dest('app/css'));
 });
 
-gulp.task('slick', function () {
+gulp.task('script', function () {
   return gulp.src([
     'node_modules/slick-carousel/slick/slick.js',
     'node_modules/magnific-popup/dist/magnific-popup.js',
@@ -83,14 +83,14 @@ gulp.task('export', async function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('app/scss/**/*.scss', gulp.parallel('sass')),
+  gulp.watch('app/scss/**/*.scss', gulp.parallel('scss')),
   gulp.watch('app/*.html', gulp.parallel('html')),
   gulp.watch('app/js/*.js', gulp.parallel('js'));
 });
 
 gulp.task('build', gulp.series('clean', 'export'));
 
-gulp.task('default', gulp.parallel('style', 'script', 'sass', 'watch', 'browser-sync'));
+gulp.task('default', gulp.parallel('style', 'html', 'js', 'script', 'sass', 'watch', 'browser-sync'));
 
 
 
