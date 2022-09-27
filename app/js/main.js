@@ -18,4 +18,26 @@ $(function () {
     const header = document.querySelector('.header__top-inner');
     header.classList.toggle('sticky', window.scrollY > 0)
   })
+
+  // Slider
+  $('.slider__inner').slick({
+    dots: true,
+    arrows: false,
+    slideToShow: 1,
+    slideToScroll: 1,
+    // autoplay: true
+  });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
