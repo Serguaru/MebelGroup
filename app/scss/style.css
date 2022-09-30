@@ -523,6 +523,33 @@ img,
     color: #202020; }
   .sales-leaders__buy:hover::before {
     background-color: #202020; }
+  .sales-leaders__loadMore {
+    font-size: 14px;
+    line-height: 1.715;
+    font-family: "Gilroy-Bold", sans-serif;
+    font-weight: 600;
+    max-width: 1440px;
+    width: 100%;
+    padding: 15px 0px;
+    border: 1px solid #dadada;
+    text-align: center;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s;
+    cursor: pointer; }
+  .sales-leaders__loadMore::after {
+    content: '+';
+    position: absolute;
+    padding-left: 20px;
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%); }
+  .sales-leaders__loadMore:hover {
+    border: 1px solid #202020; }
+
+#boxs .box:nth-child(n + 4) {
+  display: none; }
 
 @keyframes animate {
   0% {
