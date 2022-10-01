@@ -35,6 +35,15 @@ $(function () {
       $('#loadMore').fadeOut('slow');
     }
   });
+
+  // Collections Slider
+  $('.collections__inner').slick({
+    dots: false,
+    arrows: true,
+    slideToShow: 1,
+    slideToScroll: 1,
+    autoplay: false
+  });
 });
 
 
