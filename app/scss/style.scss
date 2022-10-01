@@ -408,8 +408,9 @@
 
 
 // start sales-leaders
-.sales-leaders {
-  padding: 100px 0;
+.sales-leaders,
+.new-items {
+  padding: 100px 0px;
 
   &__title {
     text-align: center;
@@ -432,7 +433,8 @@
     padding: 30px;
     transition: all 0.3s;
 
-    & .sales-leaders__hidden {
+    & .sales-leaders__hidden,
+    & .new-items__hidden {
       opacity: 0;
       transition: all 0.3s;
     }
@@ -547,7 +549,8 @@
   &__inner:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 
-    & .sales-leaders__hidden {
+    & .sales-leaders__hidden,
+    & .new-items__hidden {
       opacity: 1;
     }
   }
@@ -580,7 +583,8 @@
     background-color: $text;
   }
 
-  &__loadMore {
+  &__loadMore,
+  &__newItemsLoadMore {
     font-size: 14px;
     line-height: 1.715;
     @include f600;
@@ -596,7 +600,8 @@
     cursor: pointer;
   }
 
-  &__loadMore::after {
+  &__loadMore::after,
+  &__newItemsLoadMore::after {
     content: '+';
     position: absolute;
     padding-left: 20px;
@@ -605,12 +610,17 @@
     transform: translateY(-50%);
   }
 
-  &__loadMore:hover {
+  &__loadMore:hover,
+  &__newItemsLoadMore:hover {
     border: 1px solid $text;
   }
 }
 
 #boxs .box:nth-child(n + 4) {
+  display: none;
+}
+
+#newBoxs .newBox:nth-child(n + 4) {
   display: none;
 }
 
@@ -626,7 +636,7 @@
 
 // start collections
 .collections {
-  padding-bottom: 150px;
+  overflow-x: hidden;
 
   &__mainTitle {
     margin-bottom: 20px;
@@ -699,8 +709,8 @@
     padding: 0% 30px;
 
     &__img img {
+      max-height: 587px;
       max-width: 560px;
-      width: 100%;
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
