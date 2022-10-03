@@ -808,4 +808,49 @@ img,
   .projects__card-details:hover {
     color: #777; }
 
+.footer__inner {
+  background-color: #edebe9;
+  padding: 100px 180px 0; }
+  .footer__inner-title {
+    margin-bottom: 70px; }
+.footer__items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+.footer__item {
+  padding: 0 15px; }
+.footer__item-title {
+  font-size: 20px;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-weight: 600;
+  margin-bottom: 24px; }
+.footer__item-list li {
+  margin: 16px 0; }
+.footer__item-list li a:hover {
+  color: #777; }
+.footer__item-list li a img {
+  max-width: 114px;
+  width: 100%; }
+.footer__item-list li a .icon__payments {
+  max-width: 200px;
+  width: 100%; }
+.footer .footer__bottom {
+  padding: 110px 0px 50px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  .footer .footer__bottom-copyright {
+    font-size: 14px;
+    font-family: "Gilroy-Bold", sans-serif;
+    font-weight: 600; }
+  .footer .footer__bottom-privacyPolicy, .footer .footer__bottom-termsOfUse {
+    font-size: 14px;
+    line-height: 1.715;
+    transition: color 0.3s ease;
+    color: #777;
+    cursor: pointer; }
+  .footer .footer__bottom-privacyPolicy:hover, .footer .footer__bottom-termsOfUse:hover {
+    color: #202020; }
+
 /*# sourceMappingURL=style.css.map */
