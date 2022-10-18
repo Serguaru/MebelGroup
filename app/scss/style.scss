@@ -13,10 +13,14 @@
     left: 0;
     width: 100vw;
     display: flex;
-    z-index: 2;
+    z-index: 3;
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: $header-top-bg;
+  }
+
+  &__top.off {
+    z-index: 3;
   }
 
   &__top-inner {
@@ -448,7 +452,7 @@
     & span {
       @include f600;
       padding-left: 10px;
-      z-index: 100;
+      z-index: 5;
     }
 
     &-square {
@@ -472,6 +476,11 @@
       }
     }
   }
+
+  &__discount.off {
+    z-index: 0;
+  }
+
   &__description,
   &__price {
     text-align: center;
@@ -801,6 +810,10 @@
   outline: none;
 }
 
+.slick-arrow.off {
+  z-index: 0;
+}
+
 .slick-prev {
   left: 0;
   margin-right: 22px;
@@ -1000,5 +1013,116 @@
     } 
   }
 }
-
 // end footer
+
+// start hamburger
+.hamburger {
+  position: relative;
+  // right: 50%;
+  top: 2px;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  float: right;
+  transition: all 0.3s ease-out;
+  transform: translateX(-50%);
+
+  &.on {
+    top: 10px;
+  }
+
+  &__span {
+    height: 2px;
+    background: $text;
+    transition: all 0.3s ease-out;
+    backface-visibility: hidden;
+    margin: 2px auto;
+  }
+
+  &.on #one {
+    transform: rotate(45deg) translateX(-4px) translateY(-2px);
+  }
+
+  &.on #two {
+    opacity: 0;
+  }
+
+  &.on #three {
+    transform: rotate(-45deg) translateX(7px) translateY(-10px);
+  }
+}
+
+// end hamburger
+
+// start sidebar
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $white;
+  opacity: 0;
+}
+
+.close-menu {
+  position: fixed;
+  margin: 1em;
+  font-size: 24px;
+  color: $white;
+  z-index: 1;
+}
+
+.nav {
+  position: absolute;
+  left: 0;
+  margin-top: 8%;
+  width: 100%;
+}
+
+.main-menu-item {
+  padding: 15px 30px;
+  background-color: rgba(237, 235, 233, 0.5);
+  border-bottom: 1px solid $underline;
+
+  &.sidebar__title {
+    background-color: $white;
+    @include f600;
+  }
+
+  & a {
+    color: $text;
+    font-weight: lighter;
+  }
+}
+
+.submenu-item a {
+  color: $hoverText;
+}
+
+.sidebar__submenu li {
+  margin: 20px 0px;
+}
+
+a ion-icon {
+  position: relative;
+  font-size: 9px;
+  opacity: 0.4;
+}
+
+.sidebar__submenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .nav {
+    margin-top: 20%;
+  }
+}
+// end sidebar
+
+@import '_media';
